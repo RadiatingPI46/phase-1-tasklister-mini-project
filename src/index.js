@@ -3,22 +3,9 @@ document.querySelector("#create-task-form").addEventListener("submit", (event) =
   const description=document.querySelector("#new-task-description").value;
   console.log("Form submited",description );
   const tasks= document.getElementById("tasks")
-  tasks.innerHTML +=`<li> <input type="checkbox" id="priority" name="Priority_check" value="Priority">
-    <input type="checkbox" id="priority" name="complete" value="completion">
-    ${description} 
+  tasks.innerHTML +=`<li>  ${description} 
     <button id="remove" >X</button>
     </li>`
-
-  const check=document.getElementById("priority")
-  check.addEventListener("click",(check)=>{
-    if(check.target.name === "Priority_check"){
-      tasks.innerHTML += "(Priority)"
-    }
-    else if (check.target.name === "Priority_uncheck"){
-      tasks.innerHTML += "(Complete)"
-    }
-  })
-  
 //  remove event
   const Remove=document.getElementById("remove")
   Remove.addEventListener("click", (e)=>{
